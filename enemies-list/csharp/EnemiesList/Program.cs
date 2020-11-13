@@ -3,33 +3,33 @@ using System.Collections.Generic;
 
 namespace EnemiesList
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("My Enemies List!");
-            Console.WriteLine("----------------");
-            List<Enemy> enemies = GetEnemies();
+      Console.WriteLine("My Enemies List!");
+      Console.WriteLine("----------------");
+      List<Enemy> enemies = GetEnemies();
 
-            foreach (Enemy myEnemy in enemies)
-            {
-                if (myEnemy.IsReallyHated)
-                {
-                    Console.WriteLine($"{myEnemy.FirstName} {myEnemy.LastName} (Really, really dislike!)");
-                }
-                else
-                {
-                    Console.WriteLine($"{myEnemy.FirstName} {myEnemy.LastName}");
-                }
-            }
+      foreach (Enemy myEnemy in enemies)
+      {
+        if (myEnemy.IsReallyHated)
+        {
+          Console.WriteLine($"{myEnemy.FirstName} {myEnemy.LastName} (Really, really dislike!)");
         }
-
-        public static List<Enemy> GetEnemies()
+        else
         {
-            // Make a list of Enemy objects
-            //  How would you create a collection of enemy objects in JavaScript?
+          Console.WriteLine($"{myEnemy.FirstName} {myEnemy.LastName}");
+        }
+      }
+    }
 
-            List<Enemy> enemies = new List<Enemy> {
+    public static List<Enemy> GetEnemies()
+    {
+      // Make a list of Enemy objects
+      //  How would you create a collection of enemy objects in JavaScript?
+
+      List<Enemy> enemies = new List<Enemy> {
                 new Enemy {
                     FirstName = "Joshua",
                     LastName = "Flowers",
@@ -70,19 +70,19 @@ namespace EnemiesList
                 }
             };
 
-            return enemies;
-        }
+      return enemies;
     }
+  }
 
-    // Classes are how we define objects in C#. They help us ensure that our objects always have
-    //  the correct properties and methods.
-    // JavaScript is more flexible (but also more error-prone), so you will not need to translate
-    //  this class into JavaScript
-    public class Enemy
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public bool IsReallyHated { get; set; }
-        public List<string> Offenses { get; set; }
-    }
+  // Classes are how we define objects in C#. They help us ensure that our objects always have
+  //  the correct properties and methods.
+  // JavaScript is more flexible (but also more error-prone), so you will not need to translate
+  //  this class into JavaScript
+  public class Enemy
+  {
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public bool IsReallyHated { get; set; }
+    public List<string> Offenses { get; set; }
+  }
 }
